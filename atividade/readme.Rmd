@@ -14,10 +14,10 @@ library(tidyverse)
 
 **Questão 01**
 
-**"a"**
+**"a"** </br>O erro de Astrobaldo em ter afirmado que a mala mais pesada era de 23 Kg foi devido o mesmo não ter levado em consideração os _limites inferiores e limites superiores_ conhecidos também como _bigodes_ do grafico boxplot, pois os pesos das malas estão destribuidos também nos _limites inferiores e superiores_, porém o erro de Astrobaldo foi não levar em consideração os valores destribuidos dentre esses limites.
 
 
-**"b"** </br>O peso mediano das malas é 15.
+**"b"** </br>O peso mediano das malas é 17.
 
 **"c"** </br>A distâcia interquaerilica é de 13.
 
@@ -34,12 +34,16 @@ x <- c(68, 70, 72, 58, 90, 110, 68, 70, 72, 80, 80, 67, 90, 94, 100, 80, 75, 79,
 
 **"b"**
 
-**_Calculo da mediana_**= 79.5 
+**_Calculo da mediana_**= 79.5
+
 **_Calculo da média_**= 79.85
+
 **_Calculo dos quartiles_**Primeiro Quartil (25%)= 70.0 </br> Segundo Quartil (50%)= 79.5 </br> Terceiro Quartil (75%)= 90
+
 **_Calculo do Desvio padrão_**= 12.78681
 
 **"c"** </br>De acordo com o Histograma não há diferença, pois os valores que representam a média e mediana estão na mesma coluna de representação do histograma, o que leva a notar que não há diferenças.
 
 
 **Questão 07**
+
