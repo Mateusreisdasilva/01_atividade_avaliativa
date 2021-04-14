@@ -18,38 +18,81 @@ library(tidyverse)
 
 **"a"** </br>O erro de Astrobaldo em ter afirmado que a mala mais pesada era de 23 Kg foi devido o mesmo não ter levado em consideração os _limites inferiores e limites superiores_ conhecidos também como _bigodes_ do grafico boxplot, pois os pesos das malas estão destribuidos também nos _limites inferiores e superiores_, porém o erro de Astrobaldo foi não levar em consideração os valores destribuidos dentre esses limites.
 
-**"b"** </br>O peso mediano das malas é 17.
+_**OS DADOS NUMERICOS ABAIXO SÃO REFERENTES AOS DADOS DO GRAFICO BOXPLOT**_
 
-**"c"** </br>A distâcia interquaerilica é de 13.
+```{r}
+x <- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29) 
+```
+
+
+**"b"** </br> Depois de realizar o cálculo da mediana com os valores acima, chegou-se ao resultado disposto abaixo.
+
+```{r}
+median(x)
+```
+
+
+**"c"** </br> Para realizar o cálculo da diferença interquartilica entre os quartis que representam 75% e 25%, pegou-se o conjunto de dados (X) disposto acima, e observou-se o seguinte resultado.
+
+```{r}
+quantile(x)
+```
+
 
 **"d"**
 
-**Questão 02** </br>A alternativa correta após realizar o calculo é a alternativa _d- 5.80_ 
+**Questão 02** </br> Nessa questão inicialmente colocou-se os dados da média aritimetica das duas amostras de alunos, e observou-se que alternativa correta após realizar o calculo é alternativa _d_
+
+```{r}
+x <- c(6.40, 5.20)
+```
+
+```{r}
+median(x)
+```
+
+
 
 **Questão 03**
 
-**"a"**
+**"a"** </br> Nesse procedimento foi criado um vetor (X) que tem como função representar os dados correspondentes aos (Bat/min).
+
 ```{r}
 x <- c(68, 70, 72, 58, 90, 110, 68, 70, 72, 80, 80, 67, 90, 94, 100, 80, 75, 79, 84, 90)
 ```
 
-**"b"**
+**"b"** </br> Diante dos valores que representam os (Bat/min) acima, que está representada pela varievel (X) foi possivél cálcular a mediana desses dados, ao qual apresentou valor disposto abaixo.
+
+**_mediana_** </br> Para calcular a mediana utilizou-se como base os dados representados pela váriavel (X), que representam os (BAT/min), para calcular utilizou-se a função _median_, dessa forma possibilitando o resultado disposto abaixo. 
+
 ```{r}
 median(x)
 ```
 
-**_Calculo da mediana_**= 79.5
+**_média_** </br> No cálculo abaixo demostra como foi calculado a média dos dados representados pela variável (X) que representam os (BAT/min), para realizar esse cálculo utilizou-se a função _mean_ e foi possível obter o resultado abaixo.
+
 ```{r}
-median(x)
+mean(x)
 ```
 
-**_Calculo da média_**= 79.85
+**_Calculo dos quartiles_** </br> Pegando como base os dados da variável (X) que representam os (BAT/min) foi possível analisar os seguintes quatiles depois de usar a função _quantil_.  
 
-**_Calculo dos quartiles_**Primeiro Quartil (25%)= 70.0 </br> Segundo Quartil (50%)= 79.5 </br> Terceiro Quartil (75%)= 90
+```{r}
+quantile(x)
+```
 
-**_Calculo do Desvio padrão_**= 12.78681
+**_Calculo do Desvio padrão_** </br> No procedimento abaixo foi calculado o desvio padrão do conjunto de dados (X) que representa (BAT/min), utilizou-se a função _sd_ e obteve o resultado abaixo.
 
-**"c"** </br>De acordo com o Histograma não há diferença, pois os valores que representam a média e mediana estão na mesma coluna de representação do histograma, o que leva a notar que não há diferenças.
+```{r}
+sd(x)
+```
+
+
+**"c"** </br> De acordo com o Histograma não há diferença entre a média e mediana desses dados analisados, pois o valor que representa a média é de 79.85 e o valor que representa a mediana é de 79.5, dessa forma é possível notar que os valores da média e mediana estão representados na mesma coluna no histograma, a coluna que varia de 70 à 80. Diante disso poe-se concluir que ambos os valores representam bem o histograma.
+
+```{r}
+hist(x)
+```
 
 
 **Questão 07**

@@ -1,6 +1,6 @@
 Atividade avaliativa 01
 ================
-Mateus Reis da Silva, Sheilla, Nilson </br>
+Mateus Reis da Silva, Sheilla Santos da Rosa, Nilson </br>
 Estat2020.1
 
 ------------------------------------------------------------------------
@@ -15,24 +15,66 @@ também nos *limites inferiores e superiores*, porém o erro de Astrobaldo
 foi não levar em consideração os valores destribuidos dentre esses
 limites.
 
-**“b”** </br>O peso mediano das malas é 17.
+***OS DADOS NUMERICOS ABAIXO SÃO REFERENTES AOS DADOS DO GRAFICO
+BOXPLOT***
 
-**“c”** </br>A distâcia interquaerilica é de 13.
+``` r
+x <- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29) 
+```
+
+**“b”** </br> Depois de realizar o cálculo da mediana com os valores
+acima, chegou-se ao resultado disposto abaixo.
+
+``` r
+median(x)
+```
+
+    ## [1] 17
+
+**“c”** </br> Para realizar o cálculo da diferença interquartilica entre
+os quartis que representam 75% e 25%, pegou-se o conjunto de dados (X)
+disposto acima, e observou-se o seguinte resultado.
+
+``` r
+quantile(x)
+```
+
+    ##   0%  25%  50%  75% 100% 
+    ##    5   11   17   23   29
 
 **“d”**
 
-**Questão 02** </br>A alternativa correta após realizar o calculo é a
-alternativa *d- 5.80*
+**Questão 02** </br> Nessa questão inicialmente colocou-se os dados da
+média aritimetica das duas amostras de alunos, e observou-se que
+alternativa correta após realizar o calculo é alternativa *d*
+
+``` r
+x <- c(6.40, 5.20)
+```
+
+``` r
+median(x)
+```
+
+    ## [1] 5.8
 
 **Questão 03**
 
-**“a”**
+**“a”** </br> Nesse procedimento foi criado um vetor (X) que tem como
+função representar os dados correspondentes aos (Bat/min).
 
 ``` r
 x <- c(68, 70, 72, 58, 90, 110, 68, 70, 72, 80, 80, 67, 90, 94, 100, 80, 75, 79, 84, 90)
 ```
 
-**“b”**
+**“b”** </br> Diante dos valores que representam os (Bat/min) acima, que
+está representada pela varievel (X) foi possivél cálcular a mediana
+desses dados, ao qual apresentou valor disposto abaixo.
+
+***mediana*** </br> Para calcular a mediana utilizou-se como base os
+dados representados pela váriavel (X), que representam os (BAT/min),
+para calcular utilizou-se a função *median*, dessa forma possibilitando
+o resultado disposto abaixo.
 
 ``` r
 median(x)
@@ -40,24 +82,50 @@ median(x)
 
     ## [1] 79.5
 
-***Calculo da mediana***= 79.5
+***média*** </br> No cálculo abaixo demostra como foi calculado a média
+dos dados representados pela variável (X) que representam os (BAT/min),
+para realizar esse cálculo utilizou-se a função *mean* e foi possível
+obter o resultado abaixo.
 
 ``` r
-median(x)
+mean(x)
 ```
 
-    ## [1] 79.5
+    ## [1] 79.85
 
-***Calculo da média***= 79.85
+***Calculo dos quartiles*** </br> Pegando como base os dados da variável
+(X) que representam os (BAT/min) foi possível analisar os seguintes
+quatiles depois de usar a função *quantil*.
 
-***Calculo dos quartiles***Primeiro Quartil (25%)= 70.0 </br> Segundo
-Quartil (50%)= 79.5 </br> Terceiro Quartil (75%)= 90
+``` r
+quantile(x)
+```
 
-***Calculo do Desvio padrão***= 12.78681
+    ##    0%   25%   50%   75%  100% 
+    ##  58.0  70.0  79.5  90.0 110.0
 
-**“c”** </br>De acordo com o Histograma não há diferença, pois os
-valores que representam a média e mediana estão na mesma coluna de
-representação do histograma, o que leva a notar que não há diferenças.
+***Calculo do Desvio padrão*** </br> No procedimento abaixo foi
+calculado o desvio padrão do conjunto de dados (X) que representa
+(BAT/min), utilizou-se a função *sd* e obteve o resultado abaixo.
+
+``` r
+sd(x)
+```
+
+    ## [1] 12.78681
+
+**“c”** </br> De acordo com o Histograma não há diferença entre a média
+e mediana desses dados analisados, pois o valor que representa a média é
+de 79.85 e o valor que representa a mediana é de 79.5, dessa forma é
+possível notar que os valores da média e mediana estão representados na
+mesma coluna no histograma, a coluna que varia de 70 à 80. Diante disso
+poe-se concluir que ambos os valores representam bem o histograma.
+
+``` r
+hist(x)
+```
+
+![](readme_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 **Questão 07**
 
