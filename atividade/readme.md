@@ -173,8 +173,76 @@ dadosCo2
 ``` r
 tabela_01 <- tribble(
   ~nome, ~altura, ~peso,
-  "sheilla", 1.50, 65,
-  "icaro", 1.55, 70
-)
+  "Ana", 155, 50,
+  "Ludimilla", 158, 61,
+  "Cristina", 162, 65,
+  "Tereza", 168, 68,
+  "Patrícia", 170, 69,
+  "Mariana", 170, 65,
+  "Ana Paula", 172, 82,
+  "Dirce", 173, 79) 
 tabela_01 %>% view()
 ```
+
+**“c”** </br> Nessa alternativa para realizar os calculos, foi gerado um
+vetor com a variavel (altura e peso), para facilitar os calculos de
+média, mediana e desvio padrão.
+
+``` r
+altura <- c(155, 158, 162, 168, 170, 170, 172, 173)
+```
+
+Mediana
+
+``` r
+median(altura)
+```
+
+    ## [1] 169
+
+Média
+
+``` r
+mean(altura)
+```
+
+    ## [1] 166
+
+Desvio Padrão
+
+``` r
+sd(altura)
+```
+
+    ## [1] 6.78233
+
+Para calcular a média, mediana e desvio padrão, dos pesos, foi
+necessario gerar um veto com a variavel (peso).
+
+``` r
+peso <- c(50, 61, 65, 68, 69, 65, 82, 79)
+```
+
+meidana
+
+``` r
+median(peso)
+```
+
+    ## [1] 66.5
+
+media
+
+``` r
+mean(peso)
+```
+
+    ## [1] 67.375
+
+desvio padrão
+
+``` r
+sd(peso)
+```
+
+    ## [1] 10.04188
