@@ -254,7 +254,7 @@ valores quebrados, que contenham pontos ou virgulas.
 vetor com a variavel (altura e peso), para facilitar os calculos de
 média, mediana e desvio padrão.
 
-Vetor criado com a variável (x)
+Vetor criado com a variável (altura).
 
 ``` r
 altura <- c(155, 158, 162, 168, 170, 170, 172, 173)
@@ -295,7 +295,7 @@ peso <- c(50, 61, 65, 68, 69, 65, 82, 79)
 ```
 
 Calculo da mediana dos dados dispostos no vetor acima, que tem como
-variavel peso.
+variavel (peso).
 
 ``` r
 median(peso)
@@ -321,7 +321,7 @@ sd(peso)
 
     ## [1] 10.04188
 
-**(d)** </br> Nessa alternativa pe solicitado a criação de um grafico
+**(d)** </br> Nessa alternativa é solicitado a criação de um grafico
 plot.
 
 Para poder gerar o grafíco plot foi necessárrio estipular as variáveis
@@ -332,19 +332,25 @@ os conjuntos de números com a variável altura.
 altura <- c(155, 158, 162, 168, 170, 170, 172, 173)
 ```
 
-Grafico boxplot correspondente a variável altura:
+Grafico boxplot que corresponde aos valores que representam a variável
+altura:
 
 ``` r
-boxplot(altura)
+boxplot(altura) 
 ```
 
 ![](readme_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+
+Para poder gerar o grafíco boxplot com a variável peso, foi preciso
+criar um vetor com a variável peso, para agrupar os dados e assim gerar
+o grafíco.
 
 ``` r
 peso <- c(50, 61, 65, 68, 69, 65, 82, 79)
 ```
 
-Grafíco boxplot corrspondente a variável peso:
+Grafíco boxplot que corresponde aos valores que representam a variável
+peso:
 
 ``` r
 boxplot(peso)

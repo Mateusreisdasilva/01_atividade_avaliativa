@@ -171,11 +171,13 @@ tabela_01 %>% view()
 
 **(c)** </br> Nessa alternativa para realizar os calculos, foi gerado um vetor com a variavel (altura e peso), para facilitar os calculos de média, mediana e desvio padrão. 
 
-Vetor criado com a variável (x)
+Vetor criado com a variável (altura).
 
 ```{r}
 altura <- c(155, 158, 162, 168, 170, 170, 172, 173)
 ```
+
+
 
 Nesse procedimento abaixo, colculou-se a Mediana com a variável altura.
 
@@ -184,17 +186,21 @@ median(altura)
 ```
 
 
+
 Utilizando os valores da variável altura, nesse procedimentou calculou-se a Média.
 
 ```{r}
 mean(altura)
 ```
 
+
+
 Nesse procedimento, calculou-se o Desvio Padrão dos dados dispostos na variável altura.
 
 ```{r}
 sd(altura)
 ```
+
 
 
 Para calcular a média, mediana e desvio padrão, dos pesos, foi necessario gerar um novo vetor com a variavel (peso), com intuito que os calculos fiquem de maneira organizada.
@@ -204,7 +210,8 @@ peso <- c(50, 61, 65, 68, 69, 65, 82, 79)
 ```
 
 
-Calculo da mediana dos dados dispostos no vetor acima, que tem como variavel peso.
+
+Calculo da mediana dos dados dispostos no vetor acima, que tem como variavel (peso).
 
 ```{r}
 median(peso)
@@ -218,6 +225,7 @@ mean(peso)
 ```
 
 
+
 Desvio padrão, esse procedimento foi realizado com os dados dispostos no agrupamento de números da variável altura.
 
 ```{r}
@@ -225,7 +233,7 @@ sd(peso)
 ```
 
 
-**(d)** </br> Nessa alternativa pe solicitado a criação de um grafico plot.
+**(d)** </br> Nessa alternativa é solicitado a criação de um grafico plot.
 
 Para poder gerar o grafíco plot foi necessárrio estipular as variáveis envolvidas em ambos grafícos, para montar o primeiro boxplot utilizou-se os conjuntos de números com a variável altura.
 
@@ -236,20 +244,24 @@ altura <- c(155, 158, 162, 168, 170, 170, 172, 173)
 ```
 
 
-Grafico boxplot correspondente a variável altura: 
+
+Grafico boxplot que corresponde aos valores que representam a variável altura: 
 
 ```{r}
-boxplot(altura)
+boxplot(altura) 
 ```
 
 
+
+Para poder gerar o grafíco boxplot com a variável peso, foi preciso criar um vetor com a variável peso, para agrupar os dados e assim gerar o grafíco.  
 
 ```{r}
 peso <- c(50, 61, 65, 68, 69, 65, 82, 79)
 ```
 
 
-Grafíco boxplot corrspondente a variável peso:
+
+Grafíco boxplot que corresponde aos valores que representam a variável peso:
 
 ```{r}
 boxplot(peso)
