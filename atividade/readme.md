@@ -42,6 +42,20 @@ quantile(x)
     ##   0%  25%  50%  75% 100% 
     ##    5   11   17   23   29
 
+Nesse calculo abaixo, podemos observar a distância interquartilica entre
+o terceiro qurtil *75%* que é representada pelo valor *23* e o primeiro
+quartil \_ 25%\_ representado pelo valor *11*, para calcular essa
+distância utilizou-se as operações básicas, no *R*, dessa forma
+possibilitando com que calculasse a diferênca intequartilica.
+
+*Os valores 11 e 23, foram calculados acima, pela variável quantile(X).*
+
+``` r
+23 - 11
+```
+
+    ## [1] 12
+
 **(d)**
 
 **Questão 02** </br> Nessa questão é solicitado a média aritimética dos
@@ -139,7 +153,7 @@ analogia de que ambos os valores representam bem o histograma.
 hist(x)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 **Questão 04**
 
@@ -207,7 +221,7 @@ main = 'Positive Skewed'
 lines(density(x, bw = 1), col = 'red', lwd = 3)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ``` r
 #---------------------------------------------------------
@@ -339,7 +353,7 @@ altura:
 boxplot(altura) 
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
 
 Para poder gerar o grafíco boxplot com a variável peso, foi preciso
 criar um vetor com a variável peso, para agrupar os dados e assim gerar
@@ -356,4 +370,4 @@ peso:
 boxplot(peso)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->

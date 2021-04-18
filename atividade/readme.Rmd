@@ -39,9 +39,17 @@ quantile(x)
 ```
 
 
+Nesse calculo abaixo, podemos observar a distância interquartilica entre o terceiro qurtil _75%_ que é representada pelo valor _23_ e o primeiro quartil _ 25%_ representado pelo valor _11_, para calcular essa distância utilizou-se as operações básicas, no _R_, dessa forma possibilitando com que calculasse a diferênca intequartilica.
+
+_Os valores 11 e 23, foram calculados acima, pela variável quantile(X)._
+
+```{r}
+23 - 11
+```
 
 
 **(d)**
+
 
 **Questão 02** </br> Nessa questão é solicitado a média aritimética dos da nota dos 80 alunos, dessa forma, inicialmente colocou-se os dados da média aritimetica das duas amostras de alunos, e observou-se que alternativa correta após realizar o calculo é alternativa _d_
 
