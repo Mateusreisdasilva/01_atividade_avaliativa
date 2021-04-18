@@ -32,11 +32,13 @@ median(x)
 ```
 
 
-**(c)** </br> Para realizar o cálculo da diferença interquartilica entre os quartis que representam 75% e 25%, pegou-se o conjunto de dados (X) disposto acima, e observou-se o seguinte resultado.
+**(c)** </br> Para realizar o cálculo da diferença interquartilica entre os quartis que representam 75% e 25%, pegou-se o conjunto de dados (X) disposto acima, e observou-se o seguintes valores dos quartiles.
 
 ```{r}
 quantile(x)
 ```
+
+
 
 
 **(d)**
