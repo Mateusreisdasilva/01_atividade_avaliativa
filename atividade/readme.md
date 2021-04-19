@@ -170,38 +170,6 @@ frango_dieta <- read_csv("dados/brutos/frango_dieta.csv")
     ##   dieta = col_double()
     ## )
 
-``` r
-frango_dieta
-```
-
-    ## # A tibble: 578 x 4
-    ##     peso tempo frango dieta
-    ##    <dbl> <dbl>  <dbl> <dbl>
-    ##  1    42     0      1     1
-    ##  2    51     2      1     1
-    ##  3    59     4      1     1
-    ##  4    64     6      1     1
-    ##  5    76     8      1     1
-    ##  6    93    10      1     1
-    ##  7   106    12      1     1
-    ##  8   125    14      1     1
-    ##  9   149    16      1     1
-    ## 10   171    18      1     1
-    ## # ... with 568 more rows
-
-``` r
-dadosCo2 <- read_csv("dados/brutos/frango_dieta.csv")
-```
-
-    ## 
-    ## -- Column specification --------------------------------------------------------
-    ## cols(
-    ##   peso = col_double(),
-    ##   tempo = col_double(),
-    ##   frango = col_double(),
-    ##   dieta = col_double()
-    ## )
-
 **Questão 05**
 
 O código abaixo tem como função gerar um histograma para analíse.
@@ -221,7 +189,7 @@ main = 'Positive Skewed'
 lines(density(x, bw = 1), col = 'red', lwd = 3)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ``` r
 #---------------------------------------------------------
@@ -353,7 +321,7 @@ altura:
 boxplot(altura) 
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 Para poder gerar o grafíco boxplot com a variável peso, foi preciso
 criar um vetor com a variável peso, para agrupar os dados e assim gerar
@@ -370,4 +338,4 @@ peso:
 boxplot(peso)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->

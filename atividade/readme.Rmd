@@ -116,17 +116,8 @@ hist(x)
 ```{r}
 frango_dieta <- read_csv("dados/brutos/frango_dieta.csv")
 
-frango_dieta
 ```
 
-
-
-
-
-```{r}
-dadosCo2 <- read_csv("dados/brutos/frango_dieta.csv")
-
-```
 
 
 **Questão 05**
@@ -276,6 +267,9 @@ Grafíco boxplot que corresponde aos valores que representam a variável peso:
 ```{r}
 boxplot(peso)
 ```
+
+
+
 
 
 
