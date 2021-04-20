@@ -48,7 +48,12 @@ _Os valores 11 e 23, foram calculados acima, pela variável quantile(X)._
 ```
 
 
-**(d)**
+**(d)** </b> Nessa questão é solicitado o calculo dos valores de malas que pesam igual ou menos de 10 Kg, dessa forma levou-se em consideração que as 240 malas dispostas na questão seja o total de malas que o grafíco representa, dessa forma, os valores abaixo do grafico boxplot da prova demonstra os pesos das malas, com isso se levarmos em consideração os valores abaixo de 10 kg, pegou a diferença entre os quartis e multiplicou por 1.5, calculo esse que demonstra a quantidade de malas com o peso de 10 kg ou menos. Como demonstrado no calculo abaixo. 
+
+```{r}
+1.5 * 12
+```
+
 
 
 **Questão 02** </br> Nessa questão é solicitado a média aritimética dos da nota dos 80 alunos, dessa forma, inicialmente colocou-se os dados da média aritimetica das duas amostras de alunos, e observou-se que alternativa correta após realizar o calculo é alternativa _d_
@@ -105,7 +110,7 @@ sd(x)
 ```
 
 
-**(c)** </br> De acordo com o Histograma não há diferença entre a média e mediana desses dados analisados, pois o valor que representa a média é de 79.85 _item-02_  e o valor que representa a mediana é de 79.5 _item-01_, dessa forma é possível notar que os valores da média e mediana estão representados na mesma coluna no histograma, a coluna que tem a distância entre os valores 70 à 80. Diante disso pode-se tirar a analogia de que ambos os valores representam bem o histograma. 
+**(c)** </br> De acordo com o Histograma a diferença entre a média e mediana desses dados são pequenas, pois o valor que representa a média é de 79.85 _item-02_  e o valor que representa a mediana é de 79.5 _item-01_, dessa forma é possível notar que os valores da média e mediana estão representados na mesma coluna no histograma, a coluna que tem a distância entre os valores 70 à 80. Diante disso pode-se tirar a analogia de que ambos os valores representam bem o histograma, uma vez que as diferenças entre os valores são pequenos. 
 
 ```{r}
 hist(x)
@@ -113,10 +118,6 @@ hist(x)
 
 
 **Questão 04**
-```{r}
-frango_dieta <- read_csv("dados/brutos/frango_dieta.csv")
-
-```
 
 
 
@@ -142,6 +143,10 @@ lines(density(x, bw = 1), col = 'red', lwd = 3)
 
 De acordo com o analíse do histograma, a medida de tendência central que mais se encaixa nos parametros de escolha para analíse desse grafico é a _mediana_, pois a média ela é muito sensível a valores extremos, o que acomete em deslocalizações extremas para representações grafica. Já a mediana por ser o valor de observação intermediaria ela sofre deslocamento de menores proporções, em relação aos valores extremos. Dessa forma concui-se que a média é mais sensível a valores extremos, e podem vim acometer o resultado final, do outro lado temos a mediana que se apresenta de maneira mais relevante para essas medidas, uma vez que, a mesma não sofre grandes ossilações de valores quando leva-se em consideração os valores extremos. 
 
+
+
+
+**Questão 06**
 
 
 
@@ -188,7 +193,7 @@ median(altura)
 
 
 
-Utilizando os valores da variável altura, nesse procedimentou calculou-se a Média.
+Utilizando os valores da variável altura nesse procedimentou, calculou-se a Média.
 
 ```{r}
 mean(altura)

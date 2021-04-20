@@ -56,7 +56,20 @@ possibilitando com que calculasse a diferênca intequartilica.
 
     ## [1] 12
 
-**(d)**
+**(d)** </b> Nessa questão é solicitado o calculo dos valores de malas
+que pesam igual ou menos de 10 Kg, dessa forma levou-se em consideração
+que as 240 malas dispostas na questão seja o total de malas que o
+grafíco representa, dessa forma, os valores abaixo do grafico boxplot da
+prova demonstra os pesos das malas, com isso se levarmos em consideração
+os valores abaixo de 10 kg, pegou a diferença entre os quartis e
+multiplicou por 1.5, calculo esse que demonstra a quantidade de malas
+com o peso de 10 kg ou menos. Como demonstrado no calculo abaixo.
+
+``` r
+1.5 * 12
+```
+
+    ## [1] 18
 
 **Questão 02** </br> Nessa questão é solicitado a média aritimética dos
 da nota dos 80 alunos, dessa forma, inicialmente colocou-se os dados da
@@ -141,34 +154,22 @@ sd(x)
 
     ## [1] 12.78681
 
-**(c)** </br> De acordo com o Histograma não há diferença entre a média
-e mediana desses dados analisados, pois o valor que representa a média é
+**(c)** </br> De acordo com o Histograma a diferença entre a média e
+mediana desses dados são pequenas, pois o valor que representa a média é
 de 79.85 *item-02* e o valor que representa a mediana é de 79.5
 *item-01*, dessa forma é possível notar que os valores da média e
 mediana estão representados na mesma coluna no histograma, a coluna que
 tem a distância entre os valores 70 à 80. Diante disso pode-se tirar a
-analogia de que ambos os valores representam bem o histograma.
+analogia de que ambos os valores representam bem o histograma, uma vez
+que as diferenças entre os valores são pequenos.
 
 ``` r
 hist(x)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 **Questão 04**
-
-``` r
-frango_dieta <- read_csv("dados/brutos/frango_dieta.csv")
-```
-
-    ## 
-    ## -- Column specification --------------------------------------------------------
-    ## cols(
-    ##   peso = col_double(),
-    ##   tempo = col_double(),
-    ##   frango = col_double(),
-    ##   dieta = col_double()
-    ## )
 
 **Questão 05**
 
@@ -206,6 +207,8 @@ podem vim acometer o resultado final, do outro lado temos a mediana que
 se apresenta de maneira mais relevante para essas medidas, uma vez que,
 a mesma não sofre grandes ossilações de valores quando leva-se em
 consideração os valores extremos.
+
+**Questão 06**
 
 **Questão 07**
 
@@ -250,7 +253,7 @@ median(altura)
 
     ## [1] 169
 
-Utilizando os valores da variável altura, nesse procedimentou
+Utilizando os valores da variável altura nesse procedimentou,
 calculou-se a Média.
 
 ``` r
