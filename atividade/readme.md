@@ -1,6 +1,7 @@
 Atividade avaliativa 01
 ================
-Mateus Reis da Silva, Sheilla Santos da Rosa, Nilson </br>
+Mateus Reis da Silva, Sheilla Santos da Rosa, Nilson dos santos Filho
+</br>
 Estat2020.1
 
 ------------------------------------------------------------------------
@@ -129,19 +130,28 @@ mean(x)
     ## [1] 79.85
 
 **item-03\_Calculo dos quartiles\_** </br> Pegando como base os dados da
-variável (X) que representam os (BAT/min) e foi possível analisar os
-valores do *PRRIMEIRO QUARTIL, SEGUNDO QUARTIL E TERCEIRO QUARTIL*,
-depois de usar a função *quantil*.
+variável (X) que representam os (BAT/min) foi possível analisar os
+valores do *PRRIMEIRO QUARTIL E TERCEIRO QUARTIL* como solicitado na
+atividade, depois de usar a função *quantil*, observou-se os valores
+dispostos abaixo.
 
-*Nesse procedimento foi solicitado apenas o primeiro e terceiro quartil,
-mas calculei também o segundo para deixar a resposta por inteiro*
+*Primeiro quartil*
 
 ``` r
-quantile(x)
+quantile(x,c(0.25))
 ```
 
-    ##    0%   25%   50%   75%  100% 
-    ##  58.0  70.0  79.5  90.0 110.0
+    ## 25% 
+    ##  70
+
+*Terceiro quartil*
+
+``` r
+quantile(x,c(0.75))
+```
+
+    ## 75% 
+    ##  90
 
 **item-04\_Calculo do Desvio padrão\_** </br> No procedimento abaixo foi
 calculado o desvio padrão do conjunto de dados (X) que representa
@@ -167,9 +177,81 @@ que as diferenças entre os valores são pequenos.
 hist(x)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 **Questão 04**
+
+``` r
+dados_csv <- read_csv("dados/brutos/frango_dieta.csv")
+```
+
+    ## 
+    ## -- Column specification --------------------------------------------------------
+    ## cols(
+    ##   peso = col_double(),
+    ##   tempo = col_double(),
+    ##   frango = col_double(),
+    ##   dieta = col_double()
+    ## )
+
+``` r
+dados_csv %>% view()
+```
+
+``` r
+dados_csv
+```
+
+    ## # A tibble: 578 x 4
+    ##     peso tempo frango dieta
+    ##    <dbl> <dbl>  <dbl> <dbl>
+    ##  1    42     0      1     1
+    ##  2    51     2      1     1
+    ##  3    59     4      1     1
+    ##  4    64     6      1     1
+    ##  5    76     8      1     1
+    ##  6    93    10      1     1
+    ##  7   106    12      1     1
+    ##  8   125    14      1     1
+    ##  9   149    16      1     1
+    ## 10   171    18      1     1
+    ## # ... with 568 more rows
+
+**(a)** </br> De acordo com os dados dispostos no datasset os valores
+estão agrupados de maneira tidy, pois a organização de dados estão de
+forma que favorecem com que computadores consigam ler e agrupar melhor
+esses dados, nota-se também que esses dados estão apresentados de forma
+que as variavéis estão organizadas em colunas vesticais e as observações
+dos dados em horizontais, o que por lógica siginifica uma representação
+de dados organizados de maneira tidy.
+
+**(b)** </br> A média total que representa os valores dos pesos dos
+frangos, está calculada no procedimento abaixo.
+
+Média dos pesos de frangos.
+
+``` r
+dados_csv$peso %>% mean()
+```
+
+    ## [1] 121.8183
+
+**(c)** </br> No procedimento a seguir, calculou-se a desvio padrão que
+representam a variável peso.
+
+Desvio Padrão da variável peso de frangos.
+
+``` r
+dados_csv$peso %>% sd()
+```
+
+    ## [1] 71.07196
+
+**(d)** </br> Podemos classificar as variáveis envolvidas no datasset
+como *quantitativas continuas* pois alguns valores dispostos nas
+variáveis podem ser classificados de forma numerica de qualquer valor.
+Existe dados também que são classificados como *quantitativas
+discretas*, ou seja, que tem valores apenas inteiros.
 
 **Questão 05**
 
@@ -190,7 +272,7 @@ main = 'Positive Skewed'
 lines(density(x, bw = 1), col = 'red', lwd = 3)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 ``` r
 #---------------------------------------------------------
@@ -210,6 +292,85 @@ consideração os valores extremos.
 
 **Questão 06**
 
+``` r
+dados_co2 <- read_csv("dados/brutos/dados_co2.csv")
+```
+
+    ## 
+    ## -- Column specification --------------------------------------------------------
+    ## cols(
+    ##   ano = col_double(),
+    ##   jan = col_double(),
+    ##   fev = col_double(),
+    ##   mar = col_double(),
+    ##   abr = col_double(),
+    ##   mai = col_double(),
+    ##   jun = col_double(),
+    ##   jul = col_double(),
+    ##   ago = col_double(),
+    ##   set = col_double(),
+    ##   out = col_double(),
+    ##   nov = col_double(),
+    ##   dez = col_double()
+    ## )
+
+``` r
+dados_co2 %>% view()
+```
+
+**(a)** </br> Após importar o datasset modificou- se a variáveis
+envolvidas, classificando as mesmas de maneira correta, que ficassem de
+forma organizada para melhor leitura de dados, as modificações estão
+dispostas abaixo.
+
+``` r
+dados_co2 %>%
+  pivot_longer(
+    !ano,
+    names_to = "mes",
+    values_to =  "ppm"
+  )
+```
+
+    ## # A tibble: 468 x 3
+    ##      ano mes     ppm
+    ##    <dbl> <chr> <dbl>
+    ##  1  1959 jan    315.
+    ##  2  1959 fev    316.
+    ##  3  1959 mar    316.
+    ##  4  1959 abr    318.
+    ##  5  1959 mai    318.
+    ##  6  1959 jun    318 
+    ##  7  1959 jul    316.
+    ##  8  1959 ago    315.
+    ##  9  1959 set    314.
+    ## 10  1959 out    313.
+    ## # ... with 458 more rows
+
+``` r
+dados_co2 %>% view()
+```
+
+**(b)** </br> Depois de importar o datasset e realizar análise percebeu
+que os dados não estão agrupados de forma tidy, pois as variáveis
+envolvidas estavão organizadas de maneira orizontal e os dados de forma
+vertical, organização essa que não condiz com a forma de agrupaento de
+dados e variáveis de acordo com a forma tidy.
+
+**(c)** </br>
+
+``` r
+dados_co2 <- dados_co2 %>% 
+  pivot_longer(
+    !ano,
+    names_to = "altura",
+    values_to = "ppm",
+  )
+dados_co2 %>% view()
+```
+
+**(d)** </br>
+
 **Questão 07**
 
 **(a)** </br> Nessa alternativa, foi criada uma tibble que representa a
@@ -227,7 +388,6 @@ tabela_01 <- tribble(
   "Mariana", 170, 65,
   "Ana Paula", 172, 82,
   "Dirce", 173, 79) 
-tabela_01 %>% view()
 ```
 
 **(b)** </br> Nessa alternativa foi solicitado para classificar as
@@ -321,10 +481,10 @@ Grafico boxplot que corresponde aos valores que representam a variável
 altura:
 
 ``` r
-boxplot(altura) 
+plot(tabela_01$peso, tabela_01$altura) 
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
 
 Para poder gerar o grafíco boxplot com a variável peso, foi preciso
 criar um vetor com a variável peso, para agrupar os dados e assim gerar
@@ -341,4 +501,4 @@ peso:
 boxplot(peso)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-35-1.png)<!-- -->

@@ -1,6 +1,6 @@
 ---
 title: "Atividade avaliativa 01"
-author: "Mateus Reis da Silva, Sheilla Santos da Rosa, Nilson </br>"
+author: "Mateus Reis da Silva, Sheilla Santos da Rosa, Nilson dos santos Filho </br>"
 date: "Estat2020.1"
 output: github_document
 editor_options: 
@@ -94,12 +94,18 @@ median(x)
 mean(x)
 ```
 
-**item-03_Calculo dos quartiles_** </br> Pegando como base os dados da variável (X) que representam os (BAT/min) e foi possível analisar os valores do _PRRIMEIRO QUARTIL, SEGUNDO QUARTIL E TERCEIRO QUARTIL_, depois de usar a função _quantil_. 
+**item-03_Calculo dos quartiles_** </br> Pegando como base os dados da variável (X) que representam os (BAT/min) foi possível analisar os valores do _PRRIMEIRO QUARTIL E TERCEIRO QUARTIL_ como solicitado na atividade, depois de usar a função _quantil_, observou-se os valores dispostos abaixo. 
 
-_Nesse procedimento foi solicitado apenas o primeiro e terceiro quartil, mas calculei também o segundo para deixar a resposta por inteiro_ 
+_Primeiro quartil_ 
 
 ```{r}
-quantile(x)
+quantile(x,c(0.25))
+```
+
+_Terceiro quartil_
+
+```{r}
+quantile(x,c(0.75))
 ```
 
 
@@ -117,8 +123,44 @@ hist(x)
 ```
 
 
-**Questão 04**
+**Questão 04** 
 
+```{r}
+dados_csv <- read_csv("dados/brutos/frango_dieta.csv")
+
+dados_csv %>% view()
+```
+
+
+```{r}
+dados_csv
+```
+
+**(a)** </br> De acordo com os dados dispostos no datasset os valores estão agrupados de maneira tidy, pois a organização de dados estão de forma que favorecem com que computadores consigam ler e agrupar melhor esses dados, nota-se também que esses dados estão apresentados de forma que as variavéis estão organizadas em colunas vesticais e as observações dos dados em horizontais, o que por lógica siginifica uma representação de dados organizados de maneira tidy.
+
+
+**(b)** </br> A média total que representa os valores dos pesos dos frangos, está calculada no procedimento abaixo.
+
+
+Média dos pesos de frangos. 
+
+```{r}
+dados_csv$peso %>% mean()
+```
+
+
+
+**(c)** </br> No procedimento a seguir, calculou-se a desvio padrão que representam a variável peso.
+
+
+Desvio Padrão da variável peso de frangos.
+
+```{r}
+dados_csv$peso %>% sd()
+```
+
+
+**(d)** </br> Podemos classificar as variáveis envolvidas no datasset como _quantitativas continuas_ pois alguns valores dispostos nas variáveis podem ser classificados de forma numerica de qualquer valor. Existe dados também que são classificados como _quantitativas discretas_, ou seja, que tem valores apenas inteiros. 
 
 
 **Questão 05**
@@ -148,6 +190,46 @@ De acordo com o analíse do histograma, a medida de tendência central que mais 
 
 **Questão 06**
 
+```{r}
+dados_co2 <- read_csv("dados/brutos/dados_co2.csv")
+
+dados_co2 %>% view()
+```
+
+
+
+**(a)** </br> Após importar o datasset modificou- se a variáveis envolvidas, classificando as mesmas de maneira correta, que ficassem de forma organizada para melhor leitura de dados, as modificações estão dispostas abaixo.
+
+
+```{r}
+dados_co2 %>%
+  pivot_longer(
+    !ano,
+    names_to = "mes",
+    values_to =  "ppm"
+  )
+dados_co2 %>% view()
+```
+
+**(b)** </br> Depois de importar o datasset e realizar análise percebeu que os dados não estão agrupados de forma tidy, pois as variáveis envolvidas estavão organizadas de maneira orizontal e os dados de forma vertical, organização essa que não condiz com a forma de agrupaento de dados e variáveis de acordo com a forma tidy.
+
+**(c)** </br> 
+
+```{r}
+dados_co2 <- dados_co2 %>% 
+  pivot_longer(
+    !ano,
+    names_to = "altura",
+    values_to = "ppm",
+  )
+dados_co2 %>% view()
+
+```
+
+**(d)** </br>
+
+
+
 
 
 
@@ -168,7 +250,6 @@ tabela_01 <- tribble(
   "Mariana", 170, 65,
   "Ana Paula", 172, 82,
   "Dirce", 173, 79) 
-tabela_01 %>% view()
 ```
 
 
@@ -254,7 +335,7 @@ altura <- c(155, 158, 162, 168, 170, 170, 172, 173)
 Grafico boxplot que corresponde aos valores que representam a variável altura: 
 
 ```{r}
-boxplot(altura) 
+plot(tabela_01$peso, tabela_01$altura) 
 ```
 
 
