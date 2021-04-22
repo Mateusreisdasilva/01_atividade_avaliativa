@@ -33,29 +33,23 @@ median(x)
     ## [1] 17
 
 **(c)** </br> Para realizar o cálculo da diferença interquartilica entre
-os quartis que representam 75% e 25%, pegou-se o conjunto de dados (X)
-disposto acima, e observou-se o seguintes valores dos quartiles.
+os quartis que representam 75% e 25%, observou-se os valores que
+correspondem ao peso das malas ques estão dispostos no gráfico boxplot e
+observou-se que o valor que representa o primeiro quartil é 10 e o
+terceiro quartil 23, dessa forma realizou a cauculo referente a
+diferença interquartilica.
 
 ``` r
-quantile(x)
+23 - 10
 ```
 
-    ##   0%  25%  50%  75% 100% 
-    ##    5   11   17   23   29
+    ## [1] 13
 
-Nesse calculo abaixo, podemos observar a distância interquartilica entre
+Nesse calculo acima, podemos observar a distância interquartilica entre
 o terceiro qurtil *75%* que é representada pelo valor *23* e o primeiro
-quartil \_ 25%\_ representado pelo valor *11*, para calcular essa
-distância utilizou-se as operações básicas, no *R*, dessa forma
-possibilitando com que calculasse a diferênca intequartilica.
-
-*Os valores 11 e 23, foram calculados acima, pela variável quantile(X).*
-
-``` r
-23 - 11
-```
-
-    ## [1] 12
+quartil *25%* representado pelo valor *10*, para calcular essa distância
+utilizou-se as operações básicas, no *R*, dessa forma possibilitando com
+que calculasse a diferênca intequartilica.
 
 **(d)** </b> Nessa questão é solicitado o calculo dos valores de malas
 que pesam igual ou menos de 10 Kg, dessa forma levou-se em consideração
@@ -63,8 +57,10 @@ que as 240 malas dispostas na questão seja o total de malas que o
 grafíco representa, dessa forma, os valores abaixo do grafico boxplot da
 prova demonstra os pesos das malas, com isso se levarmos em consideração
 os valores abaixo de 10 kg, pegou a diferença entre os quartis e
-multiplicou por 1.5, calculo esse que demonstra a quantidade de malas
-com o peso de 10 kg ou menos. Como demonstrado no calculo abaixo.
+multiplicou por 1.5 *(Esse valor de 1.5 é referente aos valores
+existentes entre o limite inferior do gráfico)* dessa forma foi possível
+demonstra a quantidade de malas com o peso de 10 kg ou menos. Como
+demonstrado no calculo abaixo.
 
 ``` r
 1.5 * 12
@@ -95,7 +91,7 @@ estão dispostos na questão.
 
 Esse vetor tem como função principal representar os dados agrupados
 correspondentes aos (Bat/min), o vetor está representado na sequencia
-numeríca avaixo.
+numeríca abaixo.
 
 ``` r
 x <- c(68, 70, 72, 58, 90, 110, 68, 70, 72, 80, 80, 67, 90, 94, 100, 80, 75, 79, 84, 90)
@@ -177,9 +173,9 @@ que as diferenças entre os valores são pequenos.
 hist(x)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
-**Questão 04**
+**Questão 04** </br> Importação e analise do conjunto de dados.
 
 ``` r
 dados_csv <- read_csv("dados/brutos/frango_dieta.csv")
@@ -249,7 +245,8 @@ dados_csv$peso %>% sd()
 
 **(d)** </br> Podemos classificar as variáveis envolvidas no datasset
 como *quantitativas continuas* pois alguns valores dispostos nas
-variáveis podem ser classificados de forma numerica de qualquer valor.
+variáveis podem ser classificados de forma numerica de qualquer valor,
+isso quer dizer que pode ter valores que contem virgulas ou pontos.
 Existe dados também que são classificados como *quantitativas
 discretas*, ou seja, que tem valores apenas inteiros.
 
@@ -272,7 +269,7 @@ main = 'Positive Skewed'
 lines(density(x, bw = 1), col = 'red', lwd = 3)
 ```
 
-![](readme_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](readme_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ``` r
 #---------------------------------------------------------
@@ -290,7 +287,8 @@ se apresenta de maneira mais relevante para essas medidas, uma vez que,
 a mesma não sofre grandes ossilações de valores quando leva-se em
 consideração os valores extremos.
 
-**Questão 06**
+**Questão 06** </br> Como solicitado na questão, importou-se o conjunto
+de dados *dados\_co2.csv* e em seguida
 
 ``` r
 dados_co2 <- read_csv("dados/brutos/dados_co2.csv")
@@ -360,16 +358,32 @@ dados e variáveis de acordo com a forma tidy.
 **(c)** </br>
 
 ``` r
-dados_co2 <- dados_co2 %>% 
+dados_co2 %>% 
   pivot_longer(
     !ano,
     names_to = "altura",
-    values_to = "ppm",
+    values_to = "ppm"
   )
-dados_co2 %>% view()
 ```
 
-**(d)** </br>
+    ## # A tibble: 468 x 3
+    ##      ano altura   ppm
+    ##    <dbl> <chr>  <dbl>
+    ##  1  1959 jan     315.
+    ##  2  1959 fev     316.
+    ##  3  1959 mar     316.
+    ##  4  1959 abr     318.
+    ##  5  1959 mai     318.
+    ##  6  1959 jun     318 
+    ##  7  1959 jul     316.
+    ##  8  1959 ago     315.
+    ##  9  1959 set     314.
+    ## 10  1959 out     313.
+    ## # ... with 458 more rows
+
+**(d)**
+
+**(e)**
 
 **Questão 07**
 
@@ -466,39 +480,18 @@ sd(peso)
 
     ## [1] 10.04188
 
-**(d)** </br> Nessa alternativa é solicitado a criação de um grafico
-plot.
-
-Para poder gerar o grafíco plot foi necessárrio estipular as variáveis
-envolvidas em ambos grafícos, para montar o primeiro boxplot utilizou-se
-os conjuntos de números com a variável altura.
+**(d)** </br> Para gerar o gráfico plot, foi necessario utilizar os
+dados que correspondem a peso e altura, disposto na tabela 01, dessa
+forma o seguinte dado foi gerado.
 
 ``` r
-altura <- c(155, 158, 162, 168, 170, 170, 172, 173)
+plot(tabela_01$peso, tabela_01$altura)
 ```
 
-Grafico boxplot que corresponde aos valores que representam a variável
-altura:
+![](readme_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
 
-``` r
-plot(tabela_01$peso, tabela_01$altura) 
-```
-
-![](readme_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
-
-Para poder gerar o grafíco boxplot com a variável peso, foi preciso
-criar um vetor com a variável peso, para agrupar os dados e assim gerar
-o grafíco.
-
-``` r
-peso <- c(50, 61, 65, 68, 69, 65, 82, 79)
-```
-
-Grafíco boxplot que corresponde aos valores que representam a variável
-peso:
-
-``` r
-boxplot(peso)
-```
-
-![](readme_files/figure-gfm/unnamed-chunk-35-1.png)<!-- -->
+Pode-se observar nesse gráfico que há uma relação entre peso e altura,
+pois visualmente ao observarmos o crecimento dos valores que indicam
+peso podemos observar também um aumento nos valores da altura, sendo
+assim podemos dizer que quanto maior o peso maior será a altura, com
+isso forma podemos afirmar que há relações entre essas variáveis.

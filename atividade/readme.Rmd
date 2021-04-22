@@ -32,23 +32,17 @@ median(x)
 ```
 
 
-**(c)** </br> Para realizar o cálculo da diferença interquartilica entre os quartis que representam 75% e 25%, pegou-se o conjunto de dados (X) disposto acima, e observou-se o seguintes valores dos quartiles.
+**(c)** </br> Para realizar o cálculo da diferença interquartilica entre os quartis que representam 75% e 25%, observou-se os valores que correspondem ao peso das malas ques estão dispostos no gráfico boxplot e observou-se que o valor que representa o primeiro quartil é 10 e o terceiro quartil 23, dessa forma realizou a cauculo referente a diferença interquartilica. 
 
 ```{r}
-quantile(x)
+23 - 10
 ```
 
 
-Nesse calculo abaixo, podemos observar a distância interquartilica entre o terceiro qurtil _75%_ que é representada pelo valor _23_ e o primeiro quartil _ 25%_ representado pelo valor _11_, para calcular essa distância utilizou-se as operações básicas, no _R_, dessa forma possibilitando com que calculasse a diferênca intequartilica.
-
-_Os valores 11 e 23, foram calculados acima, pela variável quantile(X)._
-
-```{r}
-23 - 11
-```
+Nesse calculo acima, podemos observar a distância interquartilica entre o terceiro qurtil _75%_ que é representada pelo valor _23_ e o primeiro quartil _25%_ representado pelo valor _10_, para calcular essa distância utilizou-se as operações básicas, no _R_, dessa forma possibilitando com que calculasse a diferênca intequartilica.
 
 
-**(d)** </b> Nessa questão é solicitado o calculo dos valores de malas que pesam igual ou menos de 10 Kg, dessa forma levou-se em consideração que as 240 malas dispostas na questão seja o total de malas que o grafíco representa, dessa forma, os valores abaixo do grafico boxplot da prova demonstra os pesos das malas, com isso se levarmos em consideração os valores abaixo de 10 kg, pegou a diferença entre os quartis e multiplicou por 1.5, calculo esse que demonstra a quantidade de malas com o peso de 10 kg ou menos. Como demonstrado no calculo abaixo. 
+**(d)** </b> Nessa questão é solicitado o calculo dos valores de malas que pesam igual ou menos de 10 Kg, dessa forma levou-se em consideração que as 240 malas dispostas na questão seja o total de malas que o grafíco representa, dessa forma, os valores abaixo do grafico boxplot da prova demonstra os pesos das malas, com isso se levarmos em consideração os valores abaixo de 10 kg, pegou a diferença entre os quartis e multiplicou por 1.5 _(Esse valor de 1.5 é referente aos valores existentes entre o limite inferior do gráfico)_ dessa forma foi possível demonstra a quantidade de malas com o peso de 10 kg ou menos. Como demonstrado no calculo abaixo. 
 
 ```{r}
 1.5 * 12
@@ -72,7 +66,7 @@ mean(x)
 
 **(a)** </br> Nessa questão, inicialmente foi criado um vetor (X) que tem como função representar os dados correspondentes aos (Bat/min), que estão dispostos na questão. 
 
-Esse vetor tem como função principal representar os dados agrupados correspondentes aos (Bat/min), o vetor está representado na sequencia numeríca avaixo.
+Esse vetor tem como função principal representar os dados agrupados correspondentes aos (Bat/min), o vetor está representado na sequencia numeríca abaixo.
 
 ```{r}
 x <- c(68, 70, 72, 58, 90, 110, 68, 70, 72, 80, 80, 67, 90, 94, 100, 80, 75, 79, 84, 90)
@@ -123,7 +117,7 @@ hist(x)
 ```
 
 
-**Questão 04** 
+**Questão 04** </br> Importação e analise do conjunto de dados. 
 
 ```{r}
 dados_csv <- read_csv("dados/brutos/frango_dieta.csv")
@@ -160,7 +154,7 @@ dados_csv$peso %>% sd()
 ```
 
 
-**(d)** </br> Podemos classificar as variáveis envolvidas no datasset como _quantitativas continuas_ pois alguns valores dispostos nas variáveis podem ser classificados de forma numerica de qualquer valor. Existe dados também que são classificados como _quantitativas discretas_, ou seja, que tem valores apenas inteiros. 
+**(d)** </br> Podemos classificar as variáveis envolvidas no datasset como _quantitativas continuas_ pois alguns valores dispostos nas variáveis podem ser classificados de forma numerica de qualquer valor, isso quer dizer que pode ter valores que contem virgulas ou pontos. Existe dados também que são classificados como _quantitativas discretas_, ou seja, que tem valores apenas inteiros. 
 
 
 **Questão 05**
@@ -188,7 +182,7 @@ De acordo com o analíse do histograma, a medida de tendência central que mais 
 
 
 
-**Questão 06**
+**Questão 06** </br> Como solicitado na questão, importou-se o conjunto de dados _dados_co2.csv_ e em seguida 
 
 ```{r}
 dados_co2 <- read_csv("dados/brutos/dados_co2.csv")
@@ -216,18 +210,18 @@ dados_co2 %>% view()
 **(c)** </br> 
 
 ```{r}
-dados_co2 <- dados_co2 %>% 
+dados_co2 %>% 
   pivot_longer(
     !ano,
     names_to = "altura",
-    values_to = "ppm",
+    values_to = "ppm"
   )
-dados_co2 %>% view()
 
 ```
 
-**(d)** </br>
+**(d)** 
 
+**(e)**
 
 
 
@@ -289,7 +283,6 @@ sd(altura)
 ```
 
 
-
 Para calcular a média, mediana e desvio padrão, dos pesos, foi necessario gerar um novo vetor com a variavel (peso), com intuito que os calculos fiquem de maneira organizada.
 
 ```{r}
@@ -320,40 +313,14 @@ sd(peso)
 ```
 
 
-**(d)** </br> Nessa alternativa é solicitado a criação de um grafico plot.
-
-Para poder gerar o grafíco plot foi necessárrio estipular as variáveis envolvidas em ambos grafícos, para montar o primeiro boxplot utilizou-se os conjuntos de números com a variável altura.
+**(d)** </br> Para gerar o gráfico plot, foi necessario utilizar os dados que correspondem a peso e altura, disposto na tabela 01, dessa forma o seguinte dado foi gerado.  
 
 
 ```{r}
-altura <- c(155, 158, 162, 168, 170, 170, 172, 173)
-
+plot(tabela_01$peso, tabela_01$altura)
 ```
 
-
-
-Grafico boxplot que corresponde aos valores que representam a variável altura: 
-
-```{r}
-plot(tabela_01$peso, tabela_01$altura) 
-```
-
-
-
-Para poder gerar o grafíco boxplot com a variável peso, foi preciso criar um vetor com a variável peso, para agrupar os dados e assim gerar o grafíco.  
-
-```{r}
-peso <- c(50, 61, 65, 68, 69, 65, 82, 79)
-```
-
-
-
-Grafíco boxplot que corresponde aos valores que representam a variável peso:
-
-```{r}
-boxplot(peso)
-```
-
+Pode-se observar nesse gráfico que há uma relação entre peso e altura, pois visualmente ao observarmos o crecimento dos valores que indicam peso podemos observar também um aumento nos valores da altura, sendo assim podemos dizer  que quanto maior o peso maior será a altura, com isso forma podemos afirmar que há relações entre essas variáveis. 
 
 
 
