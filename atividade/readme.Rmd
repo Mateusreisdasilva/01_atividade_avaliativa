@@ -18,28 +18,29 @@ library(tidyverse)
 
 **(a)** </br> O erro de Astrobaldo em ter afirmado que a mala mais pesada era de 23 Kg foi devido o mesmo não ter levado em consideração os _limites inferiores e limites superiores_ conhecidos também como _bigodes_ do grafico boxplot, pois os pesos das malas estão destribuidos também nos _limites inferiores e superiores_, porém o erro de Astrobaldo foi não levar em consideração os valores destribuidos dentre esses limites.
 
-_**OS DADOS NUMERICOS ABAIXO SÃO REFERENTES AOS DADOS DO GRAFICO BOXPLOT**_
+_**OS DADOS NUMERICOS ABAIXO SÃO REFERENTES AOS DADOS DO GRAFICO BOXPLOT QUE IRÃO AUXILIAR NOS CALCULOS A SEGUIR**_
 
 ```{r}
 x <- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29) 
 ```
 
 
-**(b)** </br> Depois de realizar o cálculo da mediana com os valores acima, chegou-se ao resultado disposto abaixo.
+**(b)** </br> Depois de gerar o vetor acima com a varável (x) realizaou-se o cálculo da mediana e chegou-se ao resultado disposto abaixo.
 
 ```{r}
 median(x)
 ```
 
 
-**(c)** </br> Para realizar o cálculo da diferença interquartilica entre os quartis que representam 75% e 25%, observou-se os valores que correspondem ao peso das malas ques estão dispostos no gráfico boxplot e observou-se que o valor que representa o primeiro quartil é 10 e o terceiro quartil 23, dessa forma realizou a cauculo referente a diferença interquartilica. 
+**(c)** </br> Para realizar o cálculo da diferença interquartilica entre o terceiro e primeiro quartil que representam 75% e 25%, observou-se os valores que correspondem ao peso das malas ques estão dispostos no gráfico boxplot e observou-se que o valor que representa o primeiro quartil é 10 e o terceiro quartil 23, dessa forma realizou a cauculo referente a diferença interquartilica. 
 
 ```{r}
 23 - 10
+
 ```
 
 
-Nesse calculo acima, podemos observar a distância interquartilica entre o terceiro qurtil _75%_ que é representada pelo valor _23_ e o primeiro quartil _25%_ representado pelo valor _10_, para calcular essa distância utilizou-se as operações básicas, no _R_, dessa forma possibilitando com que calculasse a diferênca intequartilica.
+Nesse calculo acima, podemos observar a distância interquartilica entre o terceiro qurtil _75%_ que é representada pelo valor _23_ e o primeiro quartil _25%_ representado pelo valor _10_, é de 13 e para calcular essa distância utilizou-se as operações básicas, no _R_, dessa forma possibilitando com que calculasse a diferênca intequartilica.
 
 
 **(d)** </b> Nessa questão é solicitado o calculo dos valores de malas que pesam igual ou menos de 10 Kg, dessa forma levou-se em consideração que as 240 malas dispostas na questão seja o total de malas que o grafíco representa, dessa forma, os valores abaixo do grafico boxplot da prova demonstra os pesos das malas, com isso se levarmos em consideração os valores abaixo de 10 kg, pegou a diferença entre os quartis e multiplicou por 1.5 _(Esse valor de 1.5 é referente aos valores existentes entre o limite inferior do gráfico)_ dessa forma foi possível demonstra a quantidade de malas com o peso de 10 kg ou menos. Como demonstrado no calculo abaixo. 
@@ -50,7 +51,9 @@ Nesse calculo acima, podemos observar a distância interquartilica entre o terce
 
 
 
-**Questão 02** </br> Nessa questão é solicitado a média aritimética dos da nota dos 80 alunos, dessa forma, inicialmente colocou-se os dados da média aritimetica das duas amostras de alunos, e observou-se que alternativa correta após realizar o calculo é alternativa _d_
+**Questão 02** </br> Nessa questão é solicitado a média aritimética das nota dos 80 alunos, inicialmente a questão da o valor das médias, da amostra de 30 alunos e da outra amostra de 50 alunos, diantes desses valores apresentados pela questão que foi possível calcular a média aritimetica das notas dos 80 alunos.
+
+Para realizar o calculo da média referentes as notas dos 80 alunos, foi necessario criar um vetor com a variável (x) que correspondesse esses dados, para que foi possível calcular a média.
 
 ```{r}
 x <- c(6.40, 5.20)
@@ -75,20 +78,20 @@ x <- c(68, 70, 72, 58, 90, 110, 68, 70, 72, 80, 80, 67, 90, 94, 100, 80, 75, 79,
 
 **(b)** </br> Diante dos valores que representam os (Bat/min) demonstrados na altrnativa **(a)** ao qual está representado pela varievel (X) foi possivél cálcular a mediana, média, primeiro quartil, terceiro quartil e o desvio padrão desses dados, ao qual apresentou valores que estão dispostos abaixo.
 
-**item-01_mediana_** </br> Para calcular a mediana utilizou-se como base os dados representados pela váriavel (X), que representam os (BAT/min), para realizar o calculo utilizou-se a função _median_, dessa forma possibilitando o resultado disposto abaixo. 
+**item-01_mediana_** </br> Para calcular a mediana utilizou-se como base os dados representados pela váriavel (X), que representam os (BAT/min), para realizar o calculo utilizou-se a função _median_, e calculou a mediana dos valores de (BAT/min, dessa forma possibilitando o resultado disposto abaixo. 
 
 ```{r}
 median(x)
 ```
 
 
-**item-02_média_** </br> No cálculo abaixo demostra como foi calculado a média dos dados representados pela variável (X) que representam os (BAT/min), para realizar esse cálculo utilizou-se a função _mean_ e foi possível obter o resultado reprentado abaixo.
+**item-02_média_** </br> No cálculo a seguir demostra como foi calculado a média dos dados representados pela variável (X) que representam os (BAT/min), para realizar esse cálculo utilizou-se a função _mean_ e foi possível obter o resultado reprentado abaixo.
 
 ```{r}
 mean(x)
 ```
 
-**item-03_Calculo dos quartiles_** </br> Pegando como base os dados da variável (X) que representam os (BAT/min) foi possível analisar os valores do _PRRIMEIRO QUARTIL E TERCEIRO QUARTIL_ como solicitado na atividade, depois de usar a função _quantil_, observou-se os valores dispostos abaixo. 
+**item-03_Calculo dos quartiles_** </br> Pegando como base os dados da variável (X) que representam os (BAT/min) foi possível analisar os valores do _PRRIMEIRO QUARTIL E TERCEIRO QUARTIL_ como solicitado na atividade, em seguida usou a função _quantil_ para calcular e observou-se os valores dispostos abaixo. 
 
 _Primeiro quartil_ 
 
@@ -103,14 +106,14 @@ quantile(x,c(0.75))
 ```
 
 
-**item-04_Calculo do Desvio padrão_** </br> No procedimento abaixo foi calculado o desvio padrão do conjunto de dados (X) que representa (BAT/min), para realizar essse procedimento utilizou-se a função _sd_ que representa o desvio padrão, e obteve o resultado abaixo.
+**item-04_Calculo do Desvio padrão_** </br> No procedimento abaixo foi calculado o desvio padrão do conjunto de dados (X) que representa (BAT/min), para realizar essse calculo utilizou-se a função _sd_ que representa o desvio padrão, e obteve o resultado abaixo.
 
 ```{r}
 sd(x)
 ```
 
 
-**(c)** </br> De acordo com o Histograma a diferença entre a média e mediana desses dados são pequenas, pois o valor que representa a média é de 79.85 _item-02_  e o valor que representa a mediana é de 79.5 _item-01_, dessa forma é possível notar que os valores da média e mediana estão representados na mesma coluna no histograma, a coluna que tem a distância entre os valores 70 à 80. Diante disso pode-se tirar a analogia de que ambos os valores representam bem o histograma, uma vez que as diferenças entre os valores são pequenos. 
+**(c)** </br> De acordo com o Histograma a diferença entre a média e mediana desses dados são minimas, pois o valor que representa a média é de _79.85 item-02_  e o valor que representa a mediana é de _79.5 item-01_, dessa forma é possível notar que os valores da média e mediana estão muito próximo e representados na mesma coluna no histograma, a coluna que tem a distância entre os valores 70 à 80. Diante disso pode-se tirar a analogia de que ambos os valores representam bem o histograma, visto que, as diferenças entre os valores são considerados pequenos. 
 
 ```{r}
 hist(x)
@@ -177,7 +180,7 @@ lines(density(x, bw = 1), col = 'red', lwd = 3)
 #---------------------------------------------------------
 ```
 
-De acordo com o analíse do histograma, a medida de tendência central que mais se encaixa nos parametros de escolha para analíse desse grafico é a _mediana_, pois a média ela é muito sensível a valores extremos, o que acomete em deslocalizações extremas para representações grafica. Já a mediana por ser o valor de observação intermediaria ela sofre deslocamento de menores proporções, em relação aos valores extremos. Dessa forma concui-se que a média é mais sensível a valores extremos, e podem vim acometer o resultado final, do outro lado temos a mediana que se apresenta de maneira mais relevante para essas medidas, uma vez que, a mesma não sofre grandes ossilações de valores quando leva-se em consideração os valores extremos. 
+De acordo com o analíse do histograma, a medida de tendência central que mais se encaixa nos parametros de escolha para analíse desse grafico é a **_mediana_**, pois a média é uma medida de tendência central muito sensível a valores extremos, o que acomete em deslocalizações extremas para representações grafica. Já a mediana por ser o valor de observação intermediaria ela sofre deslocamento de menores proporções, em relação aos valores extremos. Dessa forma concui-se que a média é mais sensível a valores extremos, e podem vim acometer o resultado final, do outro lado temos a mediana que se apresenta de maneira mais relevante para essas medidas, visto que, a mesma não sofre grandes ossilações de valores quando leva-se em consideração os valores extremos.
 
 
 
@@ -221,6 +224,8 @@ dados_co2 %>%
 
 **(d)** 
 
+
+
 **(e)**
 
 
@@ -230,7 +235,7 @@ dados_co2 %>%
 
 **Questão 07**
 
-**(a)** </br> Nessa alternativa, foi criada uma tibble que representa a tabela disposta na atividade, como solicitado a tibble correspondente se encontra abaixo.
+**(a)** </br> Nessa alternativa, foi criada uma tibble que representa a tabela spresentada na atividade, como solicitado a tibble correspondente se encontra abaixo.
 
 
 ```{r}
@@ -247,10 +252,13 @@ tabela_01 <- tribble(
 ```
 
 
-**(b)** </br> Nessa alternativa foi solicitado para classificar as variáveis envolvidas na tibble, as variáveis _peso e altura_ são variáveis _Quantitativas continua_, ou seja, que podem ser medidas em valores quebrados, que contenham pontos ou virgulas.
+
+**(b)** </br> Nesse procedimento foi solicitado para classificar as variáveis envolvidas na tibble.
+
+As variáveis envolvidas na tibble são _peso e altura_  das quais essas variáveis ambas são _Quantitativas continua_, ou seja, que podem ser medidas em valores quebrados, que contenham pontos ou virgulas.
 
 
-**(c)** </br> Nessa alternativa para realizar os calculos, foi gerado um vetor com a variavel (altura e peso), para facilitar os calculos de média, mediana e desvio padrão. 
+**(c)** </br> Nessa alternativa para realizar os calculos, foi gerado dois vetores,um com a variavel altura e outro com variável peso, para facilitar os calculos de média, mediana e desvio padrão. 
 
 Vetor criado com a variável (altura).
 
@@ -260,7 +268,7 @@ altura <- c(155, 158, 162, 168, 170, 170, 172, 173)
 
 
 
-Nesse procedimento abaixo, colculou-se a Mediana com a variável altura.
+Nesse procedimento abaixo, colculou-se a Mediana que represebta a variável altura.
 
 ```{r}
 median(altura)
@@ -268,7 +276,7 @@ median(altura)
 
 
 
-Utilizando os valores da variável altura nesse procedimentou, calculou-se a Média.
+Utilizando os valores da variável altura nesse procedimento, foi possível realizar o calculo da média.
 
 ```{r}
 mean(altura)
@@ -276,7 +284,7 @@ mean(altura)
 
 
 
-Nesse procedimento, calculou-se o Desvio Padrão dos dados dispostos na variável altura.
+Para calcular o desvio padrão, utilizou-se os dados dispostos na variável altura, e obteve o resultado abaixo.
 
 ```{r}
 sd(altura)
@@ -291,14 +299,14 @@ peso <- c(50, 61, 65, 68, 69, 65, 82, 79)
 
 
 
-Calculo da mediana dos dados dispostos no vetor acima, que tem como variavel (peso).
+Calculo da mediana dos dados dispostos no vetor acima, que tem como a variavel correspondente o peso.
 
 ```{r}
 median(peso)
 ```
 
 
-Nesse procedimento, calculou-se a média do agrupamento de dados da variável peso.
+Nesse outro procedimento, calculou-se a média do agrupamento de dados da variável peso.
 
 ```{r}
 mean(peso)
@@ -306,21 +314,21 @@ mean(peso)
 
 
 
-Desvio padrão, esse procedimento foi realizado com os dados dispostos no agrupamento de números da variável altura.
+Nesse ultumo procedimento da altrnativa _c_, foi possível calcular o valor que corresponde ao desvio padrão dos dados da variável peso. 
 
 ```{r}
 sd(peso)
 ```
 
 
-**(d)** </br> Para gerar o gráfico plot, foi necessario utilizar os dados que correspondem a peso e altura, disposto na tabela 01, dessa forma o seguinte dado foi gerado.  
+**(d)** </br> Para gerar o gráfico plot, foi fundamental a utilização dos dados que correspondem ao peso e altura que estão dispostos na tabela 01, portanto o seguinte gráfico foi gerado.  
 
 
 ```{r}
 plot(tabela_01$peso, tabela_01$altura)
 ```
 
-Pode-se observar nesse gráfico que há uma relação entre peso e altura, pois visualmente ao observarmos o crecimento dos valores que indicam peso podemos observar também um aumento nos valores da altura, sendo assim podemos dizer  que quanto maior o peso maior será a altura, com isso forma podemos afirmar que há relações entre essas variáveis. 
+Pode-se observar nesse gráfico que há uma relação entre peso e altura, por que visualmente ao observarmos o deslocamento tendencioso ao crescimento dos valores que indicam peso, podemos observar também um aumento nos valores da altura, sendo assim podemos dizer  que quanto maior o peso maior será a altura, com isso podemos afirmar que há relações entre essas variáveis. 
 
 
 
